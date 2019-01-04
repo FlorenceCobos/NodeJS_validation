@@ -1,0 +1,28 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+  display: block;
+  text-align: center;
+  padding: 5px;
+}
+
+textarea {
+  width: 100%;
+}
+pre:not(.response) {
+  font-style: italic;
+  color : grey;
+}
+cite {
+  font-weight: bold;
+}
+pre.response {
+  color:forestgreen;
+}
+pre.response.error {
+   color:red;
+ }

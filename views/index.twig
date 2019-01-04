@@ -1,0 +1,78 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+    <main class="container">
+      <div class="row">
+        <div class="col-3 query">
+          <a href="/api/monuments/Attignat" method="GET"> Test 1 </a>
+          <cite>Lister les éléments "Attignat"</cite>
+          <pre class="response"></pre>
+        </div>
+        <div class="col-3 query">
+          <a href="/api/monuments/Arbent" method="DELETE"> Test 2 </a>
+          <cite>Supprimer tous les éléments de "Arbent"</cite>
+          <pre class="response"></pre>
+        </div>
+        <div class="col-3 query">
+          <a href="/api/monuments/Attignat" method="POST"> Test 3 </a>
+          <cite>Ajouter un élément dans la ville de Attignat - Attention à bien compléter les données, (code postal entre autre)</cite>
+          <pre>
+{
+    "id": "010080054-W",
+    "type": "street",
+    "name": "Rue des Granges",
+    "lat": "45.941104",
+    "lon": "5.332103",
+    "importance": 0.0011,
+    "housenumbers": {}
+}
+          </pre>
+          <textarea rows="7"></textarea>
+          <pre class="response"></pre>
+        </div>
+        <div class="col-3 query">
+          <a href="/api/monuments-count/Attignat" method="GET"> Test 4 </a>
+          <cite>Compter les éléments "Attignat"</cite>
+          <pre> count ? </pre>
+          <pre class="response"></pre>
+        </div>
+        <div class="col-3 query">
+          <a href="/api/monument/010080054W" method="PUT"> Test 5 </a>
+          <cite>Ajouter la maison "13 rue des Granges" aux coordonnées {lat:45.939610, lon:5.337831} dans la commune de Ambutrix</cite>
+          <textarea rows="7"></textarea>
+          <pre>
+findOne({id:"010080054W"})
+// Attention à la cast
+          </pre>
+          <pre class="response"></pre>
+        </div>
+        <div class="col-3 query">
+          <a href="/api/monument-geo/01434A080S" method="GET"> Test 6 </a>
+          <cite>récupérer les coordonnées géographique du "Lotissement Le Village" à "Versailleux"</cite>
+          <textarea rows="7"></textarea>
+          <pre class="response"></pre>
+        </div>
+        <div class="col-3 query">
+          <a href="/api/monument-geo/01434A080S" method="PUT"> Test 7 </a>
+          <cite>changer les coordonnées géographique du "Lotissement Le Village" à "Versailleux" avec : {lat:45.979665, lon:5.102479}</cite>
+          <pre>
+findOne({id:"01434A080S"})
+          </pre>
+          <textarea rows="7"></textarea>
+          <pre class="response"></pre>
+        </div>
+        <div class="col-3 query">
+          <a href="/api/compare/01434A080S/010080054W" method="PUT"> Test 8 </a>
+          <cite>Laquelle des 2 rue contient le plus de maison ?</cite>
+          <pre>
+var r = (a > b) ? 'oui' : 'non'
+=> Si a est strictement supérieur à b,
+   r à pour valeur 'oui',
+   sinon sa valeur est 'non'
+          </pre>
+          <textarea rows="7"></textarea>
+          <pre class="response"></pre>
+        </div>
+      </div>
+    </main>
+{% endblock %}
